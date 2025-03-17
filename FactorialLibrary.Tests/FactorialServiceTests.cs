@@ -11,4 +11,13 @@ public class FactorialServiceTests //dotnet add FactorialLibrary.Tests/Factorial
         var result = FactorialService.Factorial(0); //calling the factorial function
         Assert.Equal(1, result);
     }
+
+    [Fact]
+    public void Test_negative()
+    {
+        Assert.Throws<InvalidOperationException>(()=>{
+            var result = FactorialService.Factorial(-1);//throw error if negative number is passed to function
+        });     
+        
+    }
 }
